@@ -6,7 +6,7 @@
   const search = ref('')
 
   function updateQuizzes() {
-    quizzes.value = q.filter(quiz => quiz.name.toLowerCase().includes(search.value))
+    quizzes.value = q.filter(quiz => quiz.name.toLowerCase().includes(search.value.toLowerCase()))
   }
 
   watch(search, updateQuizzes)
@@ -71,6 +71,7 @@
     margin-bottom: 35px;
     margin-right: 20px;
     cursor: pointer;
+    font-size: 0px;
   }
 
   .card img {
@@ -80,10 +81,15 @@
   }
 
   .card .card-text {
-    padding: 0 5px;
+    padding: 0 5px 5px 5px;
   }
 
   .card .card-text h2 {
     font-weight: bold;
+    font-size: 24px;
+  }
+
+  .card .card-text p {
+    font-size: 14px;
   }
 </style>
